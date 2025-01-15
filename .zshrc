@@ -519,7 +519,7 @@ function hist() {
     return 1
   fi
 
-  history | grep -i "$1"
+  history | grep -i -B 5 -A 5 "$1"
 }
 
 function zpool-replace() {
