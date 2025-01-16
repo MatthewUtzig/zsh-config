@@ -463,8 +463,8 @@ function safeupdate() {
   fi
 
   # Check if /efi is mounted
-  if ! is_mounted "/efi"; then
-    echo "Error: /efi is not mounted. Please mount /efi and try again."
+  if ! is_mounted "/boot/efi"; then
+    echo "Error: /boot/efi is not mounted. Please mount /boot/efi and try again."
     return 1
   fi
 
@@ -608,6 +608,7 @@ function zpool-import() {
   fi
 }
 
+alias cdzsh="cd ~/.zshconfig"
 
 # Add ~/.zshconfig/scripts to PATH if not present
 if [[ ":$PATH:" != *":$HOME/.zshconfig/scripts:"* ]]; then
